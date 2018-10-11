@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // Our strings
     let story1 = "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
     let answer1a = "I\'ll hop in. Thanks for the help!"
@@ -42,10 +42,10 @@ class ViewController: UIViewController {
         bottomButton.setTitle(answer1b, for: .normal)
         
     }
-
+    
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-    
+        
         let buttonSelected: Int = sender.tag
         
         switch buttonSelected {
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
             return
         }
         
-    
+        
     }
     
     func updateUI(_ storyText: String, _ topButtonText: String?, _ bottomButtonText: String?) -> Void {
@@ -84,10 +84,10 @@ class ViewController: UIViewController {
         bottomButton.setTitle(bottomButtonText ?? "", for: .normal)
         topButton.isHidden = topButtonText == nil
         bottomButton.isHidden = bottomButtonText == nil
-
+        
     }
-
-
-
+    
+    
+    
 }
 
