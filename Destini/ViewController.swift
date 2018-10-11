@@ -50,13 +50,27 @@ class ViewController: UIViewController {
         
         switch buttonSelected {
         case 1:
-            storyTextView.text = story3
-            topButton.setTitle(answer3a, for: .normal)
-            bottomButton.setTitle(answer3b, for: .normal)
+            if storyIndex == 1 || storyIndex == 2 {
+                updateUI(story3, answer3a, answer3b)
+                storyIndex = 3
+            }
+            else if storyIndex == 3 {
+                updateUI(story6, nil, nil)
+                storyIndex = 6
+            }
         case 2:
-            storyTextView.text = story2
-            topButton.setTitle(answer2a, for: .normal)
-            bottomButton.setTitle(answer2b, for: .normal)
+            if storyIndex == 1 {
+                updateUI(story2, answer2a, answer2b)
+                storyIndex = 2
+            }
+            else if storyIndex == 2 {
+                updateUI(story4, nil, nil)
+                storyIndex = 4
+            }
+            else if storyIndex == 3 {
+                updateUI(story5, nil, nil)
+                storyIndex = 5
+            }
         default:
             return
         }
@@ -64,6 +78,11 @@ class ViewController: UIViewController {
     
     }
     
+    func updateUI(_ storyText: String, _ topButtonText: String?, _ bottomButtonText: String?) -> Void {
+        storyTextView.text = storyText
+        topButton.setTitle(topButtonText ?? "", for: .normal)
+        bottomButton.setTitle(bottomButtonText ?? "", for: .normal)
+    }
 
 
 
