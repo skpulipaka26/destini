@@ -82,6 +82,9 @@ class ViewController: UIViewController {
         storyTextView.text = storyText
         topButton.setTitle(topButtonText ?? "", for: .normal)
         bottomButton.setTitle(bottomButtonText ?? "", for: .normal)
+        topButton.isHidden = topButtonText == nil
+        bottomButton.isHidden = bottomButtonText == nil
+
     }
 
 
